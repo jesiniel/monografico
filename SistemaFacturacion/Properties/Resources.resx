@@ -118,10 +118,64 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="Logo menu principal" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Logo menu principal.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="Big mac" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Big mac.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="papa grandes" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\papa grandes.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="descarga" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\descarga.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="club hause" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\club hause.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="mctostada" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\mctostada.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="macdonald" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\macdonald.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Logo menu principal" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Logo menu principal.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="cajita feliz" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\cajita feliz.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Postres" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Postres.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="suprime" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\suprime.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="nugguets" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\nugguets.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="ensalada" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\ensalada.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Burritos" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Burritos.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Cuarto de libra" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Cuarto de libra.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="papas medianas" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\papas medianas.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="mcdonalds" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\mcdonalds.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="doble carne" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\doble carne.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="descarga (1)" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\descarga (1).jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="filete de pezcado" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\filete de pezcado.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="doble carne1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\doble carne1.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>

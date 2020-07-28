@@ -214,11 +214,6 @@ namespace SistemaFacturacion.Formularios
             CodigoBarraGenerador r = new CodigoBarraGenerador();
             r.ShowDialog();
         }
-
-        private void panel2_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
     }
 }
 

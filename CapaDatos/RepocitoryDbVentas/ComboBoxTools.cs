@@ -8,20 +8,20 @@ using System.Threading.Tasks;
 using CapaEntidad.DbVentas;
 
 namespace CapaDatos.RepocitoryDbVentas
-    {
+{
     public class ComboBoxTools
-        {
+    {
 
 
         public DataTable GetProveedor()
-            {
+        {
             using (dbventasEntity context = new dbventasEntity())
-                {
+            {
                 var connection = context.Database.Connection as SqlConnection;
                 string Qry = "SP_GET_COMBOBOX_PROVEEDOR";
                 using (SqlDataAdapter sda = new SqlDataAdapter(Qry, connection))
 
-                    {
+                {
                     //Fill the DataTable with records from Table.
                     DataTable dt = new DataTable();
                     sda.Fill(dt);
@@ -35,37 +35,60 @@ namespace CapaDatos.RepocitoryDbVentas
                     return dt;
 
 
-                    }
                 }
             }
+        }
 
-        public DataTable GetCategotia()
+        public DataTable GetEmpleado()
         {
-        using (dbventasEntity context = new dbventasEntity())
+            using (dbventasEntity context = new dbventasEntity())
             {
-            var connection = context.Database.Connection as SqlConnection;
-            string Qry = "SP_GET_COMBOBOX_CATEGORIA";
-            using (SqlDataAdapter sda = new SqlDataAdapter(Qry, connection))
+                var connection = context.Database.Connection as SqlConnection;
+                string Qry = "GET_EMPLEADO_COMBO";
+                using (SqlDataAdapter sda = new SqlDataAdapter(Qry, connection))
 
                 {
-                //Fill the DataTable with records from Table.
-                DataTable dt = new DataTable();
-                sda.Fill(dt);
+                    //Fill the DataTable with records from Table.
+                    DataTable dt = new DataTable();
+                    sda.Fill(dt);
 
-                //Insert the Default Item to DataTable.
-                DataRow row = dt.NewRow();
-                row[0] = 0;
-                row[1] = "---Seleccione---";
-                dt.Rows.InsertAt(row, 0);
+                    //Insert the Default Item to DataTable.
+                    DataRow row = dt.NewRow();
+                    row[0] = 0;
+                    row[1] = "---Seleccione---";
+                    dt.Rows.InsertAt(row, 0);
 
-                return dt;
+                    return dt;
 
 
                 }
             }
         }
+        public DataTable GetCategotia()
+        {
+            using (dbventasEntity context = new dbventasEntity())
+            {
+                var connection = context.Database.Connection as SqlConnection;
+                string Qry = "SP_GET_COMBOBOX_CATEGORIA";
+                using (SqlDataAdapter sda = new SqlDataAdapter(Qry, connection))
+
+                {
+                    //Fill the DataTable with records from Table.
+                    DataTable dt = new DataTable();
+                    sda.Fill(dt);
+
+                    //Insert the Default Item to DataTable.
+                    DataRow row = dt.NewRow();
+                    row[0] = 0;
+                    row[1] = "---Seleccione---";
+                    dt.Rows.InsertAt(row, 0);
+
+                    return dt;
 
 
+                }
+            }
+        }
         public DataTable TipoDeFactura()
         {
             using (dbventasEntity context = new dbventasEntity())
@@ -91,8 +114,7 @@ namespace CapaDatos.RepocitoryDbVentas
                 }
             }
         }
-
-  public DataTable GetRollD()
+        public DataTable GetRollD()
         {
             using (dbventasEntity context = new dbventasEntity())
             {
@@ -119,4 +141,4 @@ namespace CapaDatos.RepocitoryDbVentas
         }
 
     }
-    }
+}

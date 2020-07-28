@@ -48,46 +48,46 @@
             this.toolStripSeparator8 = new System.Windows.Forms.ToolStripSeparator();
             this.TabTrabajador = new System.Windows.Forms.TabControl();
             this.TabBuscar = new System.Windows.Forms.TabPage();
+            this.txtBuscar = new System.Windows.Forms.TextBox();
+            this.lblCri = new System.Windows.Forms.Label();
+            this.label7 = new System.Windows.Forms.Label();
             this.panel6 = new System.Windows.Forms.Panel();
             this.panel5 = new System.Windows.Forms.Panel();
             this.panel4 = new System.Windows.Forms.Panel();
             this.GridViewTra = new System.Windows.Forms.DataGridView();
             this.tabPage2 = new System.Windows.Forms.TabPage();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.panel7 = new System.Windows.Forms.Panel();
-            this.panel2 = new System.Windows.Forms.Panel();
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.lblBus = new System.Windows.Forms.Label();
-            this.txtApellido = new System.Windows.Forms.TextBox();
-            this.label1 = new System.Windows.Forms.Label();
-            this.txtNombre = new System.Windows.Forms.TextBox();
-            this.groupBox3 = new System.Windows.Forms.GroupBox();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            this.cboSexo = new System.Windows.Forms.ComboBox();
-            this.dateFechaNacimiento = new System.Windows.Forms.DateTimePicker();
             this.groupBox4 = new System.Windows.Forms.GroupBox();
+            this.txtTel = new System.Windows.Forms.MaskedTextBox();
+            this.MascCedula = new System.Windows.Forms.MaskedTextBox();
+            this.label10 = new System.Windows.Forms.Label();
+            this.label9 = new System.Windows.Forms.Label();
+            this.txtCorreo = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
             this.txtDireccion = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
-            this.label9 = new System.Windows.Forms.Label();
-            this.txtCorreo = new System.Windows.Forms.TextBox();
-            this.label10 = new System.Windows.Forms.Label();
-            this.MascCedula = new System.Windows.Forms.MaskedTextBox();
-            this.txtTel = new System.Windows.Forms.MaskedTextBox();
-            this.label7 = new System.Windows.Forms.Label();
-            this.lblCri = new System.Windows.Forms.Label();
-            this.txtBuscar = new System.Windows.Forms.TextBox();
+            this.groupBox3 = new System.Windows.Forms.GroupBox();
+            this.dateFechaNacimiento = new System.Windows.Forms.DateTimePicker();
+            this.cboSexo = new System.Windows.Forms.ComboBox();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
+            this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.label1 = new System.Windows.Forms.Label();
+            this.txtNombre = new System.Windows.Forms.TextBox();
+            this.lblBus = new System.Windows.Forms.Label();
+            this.txtApellido = new System.Windows.Forms.TextBox();
+            this.panel7 = new System.Windows.Forms.Panel();
+            this.panel2 = new System.Windows.Forms.Panel();
+            this.panel1 = new System.Windows.Forms.Panel();
             this.ToolStrip1.SuspendLayout();
             this.TabTrabajador.SuspendLayout();
             this.TabBuscar.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.GridViewTra)).BeginInit();
             this.tabPage2.SuspendLayout();
             this.groupBox1.SuspendLayout();
-            this.groupBox2.SuspendLayout();
-            this.groupBox3.SuspendLayout();
             this.groupBox4.SuspendLayout();
+            this.groupBox3.SuspendLayout();
+            this.groupBox2.SuspendLayout();
             this.SuspendLayout();
             // 
             // ToolStrip1
@@ -124,6 +124,7 @@
             this.Nuevo.Name = "Nuevo";
             this.Nuevo.Size = new System.Drawing.Size(68, 68);
             this.Nuevo.Text = "Nuevo";
+            this.Nuevo.Click += new System.EventHandler(this.Nuevo_Click);
             // 
             // toolStripSeparator6
             // 
@@ -138,8 +139,8 @@
             this.toolStripButton1.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.toolStripButton1.Name = "toolStripButton1";
             this.toolStripButton1.Size = new System.Drawing.Size(68, 68);
-            this.toolStripButton1.Text = "Limpiar";
-            this.toolStripButton1.ToolTipText = "Eliminar";
+            this.toolStripButton1.Text = "Actualizar";
+            this.toolStripButton1.ToolTipText = "Actualizar";
             // 
             // toolStripSeparator5
             // 
@@ -156,6 +157,7 @@
             this.BuscarD.Size = new System.Drawing.Size(52, 68);
             this.BuscarD.Text = "Buscar";
             this.BuscarD.ToolTipText = "Buscar";
+            this.BuscarD.Click += new System.EventHandler(this.BuscarD_Click);
             // 
             // toolStripSeparator1
             // 
@@ -172,6 +174,7 @@
             this.Aceptar.Size = new System.Drawing.Size(52, 68);
             this.Aceptar.Text = "Aceptar";
             this.Aceptar.ToolTipText = "Guardar, Modificar";
+            this.Aceptar.Click += new System.EventHandler(this.Aceptar_Click);
             // 
             // toolStripSeparator4
             // 
@@ -204,6 +207,7 @@
             this.Limpia.Name = "Limpia";
             this.Limpia.Size = new System.Drawing.Size(68, 68);
             this.Limpia.Text = "Limpia";
+            this.Limpia.Click += new System.EventHandler(this.Limpia_Click);
             // 
             // toolStripSeparator2
             // 
@@ -236,6 +240,7 @@
             this.Salir.Size = new System.Drawing.Size(52, 68);
             this.Salir.Text = "Salir";
             this.Salir.ToolTipText = "Salir";
+            this.Salir.Click += new System.EventHandler(this.Salir_Click);
             // 
             // toolStripSeparator8
             // 
@@ -251,6 +256,8 @@
             this.TabTrabajador.SelectedIndex = 0;
             this.TabTrabajador.Size = new System.Drawing.Size(1170, 519);
             this.TabTrabajador.TabIndex = 13;
+            this.TabTrabajador.SelectedIndexChanged += new System.EventHandler(this.TabTrabajador_SelectedIndexChanged);
+            this.TabTrabajador.TabIndexChanged += new System.EventHandler(this.TabTrabajador_TabIndexChanged);
             // 
             // TabBuscar
             // 
@@ -268,6 +275,40 @@
             this.TabBuscar.TabIndex = 0;
             this.TabBuscar.Text = "Busqueda Trabajador:";
             this.TabBuscar.UseVisualStyleBackColor = true;
+            // 
+            // txtBuscar
+            // 
+            this.txtBuscar.Font = new System.Drawing.Font("Tahoma", 15.75F, System.Drawing.FontStyle.Bold);
+            this.txtBuscar.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(185)))), ((int)(((byte)(243)))));
+            this.txtBuscar.Location = new System.Drawing.Point(257, 125);
+            this.txtBuscar.Multiline = true;
+            this.txtBuscar.Name = "txtBuscar";
+            this.txtBuscar.Size = new System.Drawing.Size(740, 36);
+            this.txtBuscar.TabIndex = 201;
+            this.txtBuscar.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // lblCri
+            // 
+            this.lblCri.AutoSize = true;
+            this.lblCri.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblCri.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(132)))), ((int)(((byte)(139)))), ((int)(((byte)(144)))));
+            this.lblCri.Location = new System.Drawing.Point(382, 103);
+            this.lblCri.Name = "lblCri";
+            this.lblCri.Size = new System.Drawing.Size(464, 19);
+            this.lblCri.TabIndex = 200;
+            this.lblCri.Text = "Criterio de Busqueda/Nombre/Telefono/Codigo/Cedula";
+            this.lblCri.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Font = new System.Drawing.Font("Tahoma", 15.75F, System.Drawing.FontStyle.Bold);
+            this.label7.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(132)))), ((int)(((byte)(139)))), ((int)(((byte)(144)))));
+            this.label7.Location = new System.Drawing.Point(167, 124);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(91, 25);
+            this.label7.TabIndex = 161;
+            this.label7.Text = "Buscar:";
             // 
             // panel6
             // 
@@ -306,6 +347,7 @@
             this.GridViewTra.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.GridViewTra.Size = new System.Drawing.Size(830, 271);
             this.GridViewTra.TabIndex = 0;
+            this.GridViewTra.CellContentDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.GridViewTra_CellContentDoubleClick);
             // 
             // tabPage2
             // 
@@ -333,6 +375,226 @@
             this.groupBox1.TabIndex = 87;
             this.groupBox1.TabStop = false;
             // 
+            // groupBox4
+            // 
+            this.groupBox4.BackColor = System.Drawing.SystemColors.ButtonFace;
+            this.groupBox4.Controls.Add(this.txtTel);
+            this.groupBox4.Controls.Add(this.MascCedula);
+            this.groupBox4.Controls.Add(this.label10);
+            this.groupBox4.Controls.Add(this.label9);
+            this.groupBox4.Controls.Add(this.txtCorreo);
+            this.groupBox4.Controls.Add(this.label5);
+            this.groupBox4.Controls.Add(this.txtDireccion);
+            this.groupBox4.Controls.Add(this.label6);
+            this.groupBox4.Location = new System.Drawing.Point(156, 256);
+            this.groupBox4.Name = "groupBox4";
+            this.groupBox4.Size = new System.Drawing.Size(849, 225);
+            this.groupBox4.TabIndex = 195;
+            this.groupBox4.TabStop = false;
+            this.groupBox4.Text = "Domicilio";
+            // 
+            // txtTel
+            // 
+            this.txtTel.Font = new System.Drawing.Font("Tahoma", 15.75F, System.Drawing.FontStyle.Bold);
+            this.txtTel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(185)))), ((int)(((byte)(243)))));
+            this.txtTel.Location = new System.Drawing.Point(253, 145);
+            this.txtTel.Mask = "1-000-000-0000";
+            this.txtTel.Name = "txtTel";
+            this.txtTel.Size = new System.Drawing.Size(329, 33);
+            this.txtTel.TabIndex = 7;
+            // 
+            // MascCedula
+            // 
+            this.MascCedula.Font = new System.Drawing.Font("Tahoma", 15.75F, System.Drawing.FontStyle.Bold);
+            this.MascCedula.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(185)))), ((int)(((byte)(243)))));
+            this.MascCedula.Location = new System.Drawing.Point(253, 28);
+            this.MascCedula.Mask = "000-0000000-0";
+            this.MascCedula.Name = "MascCedula";
+            this.MascCedula.Size = new System.Drawing.Size(329, 33);
+            this.MascCedula.TabIndex = 5;
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label10.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(132)))), ((int)(((byte)(139)))), ((int)(((byte)(144)))));
+            this.label10.Location = new System.Drawing.Point(163, 145);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(87, 19);
+            this.label10.TabIndex = 195;
+            this.label10.Text = "Telefono:";
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label9.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(132)))), ((int)(((byte)(139)))), ((int)(((byte)(144)))));
+            this.label9.Location = new System.Drawing.Point(180, 185);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(70, 19);
+            this.label9.TabIndex = 193;
+            this.label9.Text = "Correo:";
+            // 
+            // txtCorreo
+            // 
+            this.txtCorreo.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtCorreo.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(185)))), ((int)(((byte)(243)))));
+            this.txtCorreo.Location = new System.Drawing.Point(253, 185);
+            this.txtCorreo.Multiline = true;
+            this.txtCorreo.Name = "txtCorreo";
+            this.txtCorreo.Size = new System.Drawing.Size(329, 34);
+            this.txtCorreo.TabIndex = 8;
+            this.txtCorreo.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(132)))), ((int)(((byte)(139)))), ((int)(((byte)(144)))));
+            this.label5.Location = new System.Drawing.Point(160, 80);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(90, 19);
+            this.label5.TabIndex = 191;
+            this.label5.Text = "Direccion:";
+            // 
+            // txtDireccion
+            // 
+            this.txtDireccion.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtDireccion.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(185)))), ((int)(((byte)(243)))));
+            this.txtDireccion.Location = new System.Drawing.Point(253, 77);
+            this.txtDireccion.Multiline = true;
+            this.txtDireccion.Name = "txtDireccion";
+            this.txtDireccion.Size = new System.Drawing.Size(329, 52);
+            this.txtDireccion.TabIndex = 6;
+            this.txtDireccion.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(132)))), ((int)(((byte)(139)))), ((int)(((byte)(144)))));
+            this.label6.Location = new System.Drawing.Point(179, 28);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(71, 19);
+            this.label6.TabIndex = 189;
+            this.label6.Text = "Cedula:";
+            // 
+            // groupBox3
+            // 
+            this.groupBox3.BackColor = System.Drawing.SystemColors.ButtonFace;
+            this.groupBox3.Controls.Add(this.dateFechaNacimiento);
+            this.groupBox3.Controls.Add(this.cboSexo);
+            this.groupBox3.Controls.Add(this.label2);
+            this.groupBox3.Controls.Add(this.label3);
+            this.groupBox3.Location = new System.Drawing.Point(611, 101);
+            this.groupBox3.Name = "groupBox3";
+            this.groupBox3.Size = new System.Drawing.Size(400, 135);
+            this.groupBox3.TabIndex = 194;
+            this.groupBox3.TabStop = false;
+            this.groupBox3.Text = "Nacimiento Sexo";
+            // 
+            // dateFechaNacimiento
+            // 
+            this.dateFechaNacimiento.CalendarForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(132)))), ((int)(((byte)(139)))), ((int)(((byte)(144)))));
+            this.dateFechaNacimiento.Location = new System.Drawing.Point(165, 32);
+            this.dateFechaNacimiento.Name = "dateFechaNacimiento";
+            this.dateFechaNacimiento.Size = new System.Drawing.Size(229, 20);
+            this.dateFechaNacimiento.TabIndex = 3;
+            // 
+            // cboSexo
+            // 
+            this.cboSexo.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cboSexo.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(185)))), ((int)(((byte)(243)))));
+            this.cboSexo.FormattingEnabled = true;
+            this.cboSexo.Items.AddRange(new object[] {
+            "Masculino",
+            "Femenino",
+            "Otros"});
+            this.cboSexo.Location = new System.Drawing.Point(165, 70);
+            this.cboSexo.Name = "cboSexo";
+            this.cboSexo.Size = new System.Drawing.Size(229, 27);
+            this.cboSexo.TabIndex = 4;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(132)))), ((int)(((byte)(139)))), ((int)(((byte)(144)))));
+            this.label2.Location = new System.Drawing.Point(104, 73);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(55, 19);
+            this.label2.TabIndex = 191;
+            this.label2.Text = "Sexo:";
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(132)))), ((int)(((byte)(139)))), ((int)(((byte)(144)))));
+            this.label3.Location = new System.Drawing.Point(6, 32);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(159, 19);
+            this.label3.TabIndex = 189;
+            this.label3.Text = "Fecha Nacimiento:";
+            // 
+            // groupBox2
+            // 
+            this.groupBox2.BackColor = System.Drawing.SystemColors.ButtonFace;
+            this.groupBox2.Controls.Add(this.label1);
+            this.groupBox2.Controls.Add(this.txtNombre);
+            this.groupBox2.Controls.Add(this.lblBus);
+            this.groupBox2.Controls.Add(this.txtApellido);
+            this.groupBox2.Location = new System.Drawing.Point(156, 101);
+            this.groupBox2.Name = "groupBox2";
+            this.groupBox2.Size = new System.Drawing.Size(449, 135);
+            this.groupBox2.TabIndex = 193;
+            this.groupBox2.TabStop = false;
+            this.groupBox2.Text = "Apellidos Nombre";
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(132)))), ((int)(((byte)(139)))), ((int)(((byte)(144)))));
+            this.label1.Location = new System.Drawing.Point(16, 73);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(87, 19);
+            this.label1.TabIndex = 191;
+            this.label1.Text = "Nombres:";
+            // 
+            // txtNombre
+            // 
+            this.txtNombre.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtNombre.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(185)))), ((int)(((byte)(243)))));
+            this.txtNombre.Location = new System.Drawing.Point(109, 70);
+            this.txtNombre.Multiline = true;
+            this.txtNombre.Name = "txtNombre";
+            this.txtNombre.Size = new System.Drawing.Size(329, 34);
+            this.txtNombre.TabIndex = 2;
+            this.txtNombre.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // lblBus
+            // 
+            this.lblBus.AutoSize = true;
+            this.lblBus.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblBus.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(132)))), ((int)(((byte)(139)))), ((int)(((byte)(144)))));
+            this.lblBus.Location = new System.Drawing.Point(16, 24);
+            this.lblBus.Name = "lblBus";
+            this.lblBus.Size = new System.Drawing.Size(90, 19);
+            this.lblBus.TabIndex = 189;
+            this.lblBus.Text = "Apellidos:";
+            // 
+            // txtApellido
+            // 
+            this.txtApellido.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtApellido.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(185)))), ((int)(((byte)(243)))));
+            this.txtApellido.Location = new System.Drawing.Point(109, 21);
+            this.txtApellido.Multiline = true;
+            this.txtApellido.Name = "txtApellido";
+            this.txtApellido.Size = new System.Drawing.Size(329, 34);
+            this.txtApellido.TabIndex = 1;
+            this.txtApellido.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
             // panel7
             // 
             this.panel7.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(1)))), ((int)(((byte)(35)))), ((int)(((byte)(55)))));
@@ -359,260 +621,6 @@
             this.panel1.Size = new System.Drawing.Size(150, 399);
             this.panel1.TabIndex = 87;
             // 
-            // groupBox2
-            // 
-            this.groupBox2.BackColor = System.Drawing.SystemColors.ButtonFace;
-            this.groupBox2.Controls.Add(this.label1);
-            this.groupBox2.Controls.Add(this.txtNombre);
-            this.groupBox2.Controls.Add(this.lblBus);
-            this.groupBox2.Controls.Add(this.txtApellido);
-            this.groupBox2.Location = new System.Drawing.Point(156, 101);
-            this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(449, 135);
-            this.groupBox2.TabIndex = 193;
-            this.groupBox2.TabStop = false;
-            this.groupBox2.Text = "Apellidos Nombre";
-            // 
-            // lblBus
-            // 
-            this.lblBus.AutoSize = true;
-            this.lblBus.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblBus.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(132)))), ((int)(((byte)(139)))), ((int)(((byte)(144)))));
-            this.lblBus.Location = new System.Drawing.Point(16, 22);
-            this.lblBus.Name = "lblBus";
-            this.lblBus.Size = new System.Drawing.Size(90, 19);
-            this.lblBus.TabIndex = 189;
-            this.lblBus.Text = "Apellidos:";
-            // 
-            // txtApellido
-            // 
-            this.txtApellido.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtApellido.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(185)))), ((int)(((byte)(243)))));
-            this.txtApellido.Location = new System.Drawing.Point(109, 19);
-            this.txtApellido.Multiline = true;
-            this.txtApellido.Name = "txtApellido";
-            this.txtApellido.Size = new System.Drawing.Size(329, 34);
-            this.txtApellido.TabIndex = 190;
-            this.txtApellido.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(132)))), ((int)(((byte)(139)))), ((int)(((byte)(144)))));
-            this.label1.Location = new System.Drawing.Point(16, 71);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(87, 19);
-            this.label1.TabIndex = 191;
-            this.label1.Text = "Nombres:";
-            // 
-            // txtNombre
-            // 
-            this.txtNombre.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtNombre.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(185)))), ((int)(((byte)(243)))));
-            this.txtNombre.Location = new System.Drawing.Point(109, 68);
-            this.txtNombre.Multiline = true;
-            this.txtNombre.Name = "txtNombre";
-            this.txtNombre.Size = new System.Drawing.Size(329, 34);
-            this.txtNombre.TabIndex = 192;
-            this.txtNombre.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // groupBox3
-            // 
-            this.groupBox3.BackColor = System.Drawing.SystemColors.ButtonFace;
-            this.groupBox3.Controls.Add(this.dateFechaNacimiento);
-            this.groupBox3.Controls.Add(this.cboSexo);
-            this.groupBox3.Controls.Add(this.label2);
-            this.groupBox3.Controls.Add(this.label3);
-            this.groupBox3.Location = new System.Drawing.Point(611, 101);
-            this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Size = new System.Drawing.Size(400, 135);
-            this.groupBox3.TabIndex = 194;
-            this.groupBox3.TabStop = false;
-            this.groupBox3.Text = "Nacimiento Sexo";
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(132)))), ((int)(((byte)(139)))), ((int)(((byte)(144)))));
-            this.label2.Location = new System.Drawing.Point(104, 74);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(55, 19);
-            this.label2.TabIndex = 191;
-            this.label2.Text = "Sexo:";
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(132)))), ((int)(((byte)(139)))), ((int)(((byte)(144)))));
-            this.label3.Location = new System.Drawing.Point(6, 33);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(159, 19);
-            this.label3.TabIndex = 189;
-            this.label3.Text = "Fecha Nacimiento:";
-            // 
-            // cboSexo
-            // 
-            this.cboSexo.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cboSexo.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(185)))), ((int)(((byte)(243)))));
-            this.cboSexo.FormattingEnabled = true;
-            this.cboSexo.Items.AddRange(new object[] {
-            "Masculino",
-            "Femenino",
-            "Otros"});
-            this.cboSexo.Location = new System.Drawing.Point(165, 71);
-            this.cboSexo.Name = "cboSexo";
-            this.cboSexo.Size = new System.Drawing.Size(229, 27);
-            this.cboSexo.TabIndex = 198;
-            // 
-            // dateFechaNacimiento
-            // 
-            this.dateFechaNacimiento.CalendarForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(132)))), ((int)(((byte)(139)))), ((int)(((byte)(144)))));
-            this.dateFechaNacimiento.Location = new System.Drawing.Point(165, 33);
-            this.dateFechaNacimiento.Name = "dateFechaNacimiento";
-            this.dateFechaNacimiento.Size = new System.Drawing.Size(229, 20);
-            this.dateFechaNacimiento.TabIndex = 199;
-            // 
-            // groupBox4
-            // 
-            this.groupBox4.BackColor = System.Drawing.SystemColors.ButtonFace;
-            this.groupBox4.Controls.Add(this.txtTel);
-            this.groupBox4.Controls.Add(this.MascCedula);
-            this.groupBox4.Controls.Add(this.label10);
-            this.groupBox4.Controls.Add(this.label9);
-            this.groupBox4.Controls.Add(this.txtCorreo);
-            this.groupBox4.Controls.Add(this.label5);
-            this.groupBox4.Controls.Add(this.txtDireccion);
-            this.groupBox4.Controls.Add(this.label6);
-            this.groupBox4.Location = new System.Drawing.Point(156, 256);
-            this.groupBox4.Name = "groupBox4";
-            this.groupBox4.Size = new System.Drawing.Size(849, 225);
-            this.groupBox4.TabIndex = 195;
-            this.groupBox4.TabStop = false;
-            this.groupBox4.Text = "Domicilio";
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(132)))), ((int)(((byte)(139)))), ((int)(((byte)(144)))));
-            this.label5.Location = new System.Drawing.Point(160, 80);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(90, 19);
-            this.label5.TabIndex = 191;
-            this.label5.Text = "Direccion:";
-            // 
-            // txtDireccion
-            // 
-            this.txtDireccion.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtDireccion.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(185)))), ((int)(((byte)(243)))));
-            this.txtDireccion.Location = new System.Drawing.Point(253, 77);
-            this.txtDireccion.Multiline = true;
-            this.txtDireccion.Name = "txtDireccion";
-            this.txtDireccion.Size = new System.Drawing.Size(329, 52);
-            this.txtDireccion.TabIndex = 192;
-            this.txtDireccion.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(132)))), ((int)(((byte)(139)))), ((int)(((byte)(144)))));
-            this.label6.Location = new System.Drawing.Point(179, 28);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(71, 19);
-            this.label6.TabIndex = 189;
-            this.label6.Text = "Cedula:";
-            // 
-            // label9
-            // 
-            this.label9.AutoSize = true;
-            this.label9.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label9.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(132)))), ((int)(((byte)(139)))), ((int)(((byte)(144)))));
-            this.label9.Location = new System.Drawing.Point(180, 185);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(70, 19);
-            this.label9.TabIndex = 193;
-            this.label9.Text = "Correo:";
-            // 
-            // txtCorreo
-            // 
-            this.txtCorreo.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtCorreo.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(185)))), ((int)(((byte)(243)))));
-            this.txtCorreo.Location = new System.Drawing.Point(253, 185);
-            this.txtCorreo.Multiline = true;
-            this.txtCorreo.Name = "txtCorreo";
-            this.txtCorreo.Size = new System.Drawing.Size(329, 34);
-            this.txtCorreo.TabIndex = 194;
-            this.txtCorreo.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // label10
-            // 
-            this.label10.AutoSize = true;
-            this.label10.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label10.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(132)))), ((int)(((byte)(139)))), ((int)(((byte)(144)))));
-            this.label10.Location = new System.Drawing.Point(163, 145);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(87, 19);
-            this.label10.TabIndex = 195;
-            this.label10.Text = "Telefono:";
-            // 
-            // MascCedula
-            // 
-            this.MascCedula.Font = new System.Drawing.Font("Tahoma", 15.75F, System.Drawing.FontStyle.Bold);
-            this.MascCedula.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(185)))), ((int)(((byte)(243)))));
-            this.MascCedula.Location = new System.Drawing.Point(253, 28);
-            this.MascCedula.Mask = "000-0000000-0";
-            this.MascCedula.Name = "MascCedula";
-            this.MascCedula.Size = new System.Drawing.Size(329, 33);
-            this.MascCedula.TabIndex = 197;
-            // 
-            // txtTel
-            // 
-            this.txtTel.Font = new System.Drawing.Font("Tahoma", 15.75F, System.Drawing.FontStyle.Bold);
-            this.txtTel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(185)))), ((int)(((byte)(243)))));
-            this.txtTel.Location = new System.Drawing.Point(253, 145);
-            this.txtTel.Mask = "1-000-000-0000";
-            this.txtTel.Name = "txtTel";
-            this.txtTel.Size = new System.Drawing.Size(329, 33);
-            this.txtTel.TabIndex = 198;
-            // 
-            // label7
-            // 
-            this.label7.AutoSize = true;
-            this.label7.Font = new System.Drawing.Font("Tahoma", 15.75F, System.Drawing.FontStyle.Bold);
-            this.label7.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(132)))), ((int)(((byte)(139)))), ((int)(((byte)(144)))));
-            this.label7.Location = new System.Drawing.Point(167, 124);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(91, 25);
-            this.label7.TabIndex = 161;
-            this.label7.Text = "Buscar:";
-            // 
-            // lblCri
-            // 
-            this.lblCri.AutoSize = true;
-            this.lblCri.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblCri.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(132)))), ((int)(((byte)(139)))), ((int)(((byte)(144)))));
-            this.lblCri.Location = new System.Drawing.Point(382, 103);
-            this.lblCri.Name = "lblCri";
-            this.lblCri.Size = new System.Drawing.Size(464, 19);
-            this.lblCri.TabIndex = 200;
-            this.lblCri.Text = "Criterio de Busqueda/Nombre/Telefono/Codigo/Cedula";
-            this.lblCri.TextAlign = System.Drawing.ContentAlignment.TopCenter;
-            // 
-            // txtBuscar
-            // 
-            this.txtBuscar.Font = new System.Drawing.Font("Tahoma", 15.75F, System.Drawing.FontStyle.Bold);
-            this.txtBuscar.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(185)))), ((int)(((byte)(243)))));
-            this.txtBuscar.Location = new System.Drawing.Point(257, 125);
-            this.txtBuscar.Multiline = true;
-            this.txtBuscar.Name = "txtBuscar";
-            this.txtBuscar.Size = new System.Drawing.Size(740, 36);
-            this.txtBuscar.TabIndex = 201;
-            this.txtBuscar.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
             // FrmTrabajador
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -631,12 +639,12 @@
             this.tabPage2.ResumeLayout(false);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
-            this.groupBox2.ResumeLayout(false);
-            this.groupBox2.PerformLayout();
-            this.groupBox3.ResumeLayout(false);
-            this.groupBox3.PerformLayout();
             this.groupBox4.ResumeLayout(false);
             this.groupBox4.PerformLayout();
+            this.groupBox3.ResumeLayout(false);
+            this.groupBox3.PerformLayout();
+            this.groupBox2.ResumeLayout(false);
+            this.groupBox2.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 

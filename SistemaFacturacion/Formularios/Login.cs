@@ -22,6 +22,9 @@ namespace SistemaFacturacion
        
         private void BtnIngerso_Click(object sender, EventArgs e)
             {
+            string NomC;
+            int idTrabajador;
+
             if (txtContrasena.Text == "" || txtContrasena.Text == null || txtUsuario.Text == "" || txtUsuario.Text == null)
                 {
                   panelErrorClave.Visible = true;
@@ -30,26 +33,52 @@ namespace SistemaFacturacion
                 }
             else
                 {
-                if (LogicaLogin.ValidateLogin(txtUsuario.Text, Encripatar.Encrypt(txtContrasena.Text), out rollid))
+                if (LogicaLogin.ValidateLogin(txtUsuario.Text, Encripatar.Encrypt(txtContrasena.Text), out rollid,out NomC, out idTrabajador))
                     {
 
-                    if(rollid <= 0)
-                        {
-                          panelErrorClave.Visible = true;
-                          label5.Text = "Usuario y/o contraseña incorrectos";
-                        }
+                    if (rollid <= 0)
+                    {
+                        panelErrorClave.Visible = true;
+                        label5.Text = "Usuario y/o contraseña incorrectos";
+                    }
                     else
-                        {
+                    {
                         //implementar validacion de role para visualizar el menu pendiente
                         Seccion seccion = Seccion.Instance;
                         seccion.Usuario = txtUsuario.Text;
                         seccion.Rolid = (LogicRoll.LevelRol)rollid;
-                        Formularios.MenuPrincipal f = new Formularios.MenuPrincipal();
-                        this.Hide();
-                        f.Show();
+                        seccion.nombreCompleto = NomC;
+                        seccion.IdTrabajador = idTrabajador;
+
+
+                        if (rollid == 1 || rollid == 7)
+                        {
+                            Formularios.MenuPrincipal men = new Formularios.MenuPrincipal();
+                            this.Hide();
+                            men.Show();
+                        }
+                        else if (rollid == 2 || rollid == 4)
+                        {
+                            Formularios.FrmAlmacenista al = new Formularios.FrmAlmacenista();
+                            this.Hide();
+                            al.Show();
+
+                        }
+                        else if (rollid == 3 || rollid == 5)
+                        {
+                            Formularios.FrmCaja c = new Formularios.FrmCaja();
+                            this.Hide();
+                            c.Show();
+                        }
+                        else if (rollid == 6)
+                        {
+                            Formularios.FrmRhh r1 = new Formularios.FrmRhh();
+                            this.Hide();
+                            r1.Show();
                         }
 
                     }
+                }                 
                 else
                     {
                       panelErrorClave.Visible = true;

@@ -50,7 +50,6 @@
             this.label1 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.BtnArticulos = new System.Windows.Forms.Button();
             this.ToolStrip1 = new System.Windows.Forms.ToolStrip();
             this.Nuevo = new System.Windows.Forms.ToolStripButton();
             this.toolStripSeparator6 = new System.Windows.Forms.ToolStripSeparator();
@@ -72,7 +71,6 @@
             this.groupBox1.SuspendLayout();
             this.panel3.SuspendLayout();
             this.panelErrorCategoria.SuspendLayout();
-            this.panel1.SuspendLayout();
             this.ToolStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -90,8 +88,6 @@
             // 
             // TabBuscar
             // 
-            this.TabBuscar.BackColor = System.Drawing.Color.Gold;
-            this.TabBuscar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.TabBuscar.Controls.Add(this.panel6);
             this.TabBuscar.Controls.Add(this.panel5);
             this.TabBuscar.Controls.Add(this.panel4);
@@ -104,10 +100,11 @@
             this.TabBuscar.Size = new System.Drawing.Size(808, 377);
             this.TabBuscar.TabIndex = 0;
             this.TabBuscar.Text = "Busqueda Categoria:";
+            this.TabBuscar.UseVisualStyleBackColor = true;
             // 
             // panel6
             // 
-            this.panel6.BackColor = System.Drawing.Color.Red;
+            this.panel6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(87)))), ((int)(((byte)(51)))));
             this.panel6.Location = new System.Drawing.Point(3, 0);
             this.panel6.Name = "panel6";
             this.panel6.Size = new System.Drawing.Size(805, 63);
@@ -115,7 +112,7 @@
             // 
             // panel5
             // 
-            this.panel5.BackColor = System.Drawing.Color.Red;
+            this.panel5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(1)))), ((int)(((byte)(35)))), ((int)(((byte)(55)))));
             this.panel5.Location = new System.Drawing.Point(655, 62);
             this.panel5.Name = "panel5";
             this.panel5.Size = new System.Drawing.Size(159, 315);
@@ -123,7 +120,7 @@
             // 
             // panel4
             // 
-            this.panel4.BackColor = System.Drawing.Color.Red;
+            this.panel4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(1)))), ((int)(((byte)(35)))), ((int)(((byte)(55)))));
             this.panel4.Location = new System.Drawing.Point(3, 62);
             this.panel4.Name = "panel4";
             this.panel4.Size = new System.Drawing.Size(158, 315);
@@ -145,7 +142,7 @@
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Tahoma", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.ForeColor = System.Drawing.Color.Black;
+            this.label4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(185)))), ((int)(((byte)(243)))));
             this.label4.Location = new System.Drawing.Point(192, 88);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(191, 25);
@@ -300,23 +297,10 @@
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(1)))), ((int)(((byte)(35)))), ((int)(((byte)(55)))));
-            this.panel1.Controls.Add(this.BtnArticulos);
             this.panel1.Location = new System.Drawing.Point(7, 73);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(143, 292);
             this.panel1.TabIndex = 87;
-            // 
-            // BtnArticulos
-            // 
-            this.BtnArticulos.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(1)))), ((int)(((byte)(35)))), ((int)(((byte)(55)))));
-            this.BtnArticulos.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.BtnArticulos.ForeColor = System.Drawing.Color.White;
-            this.BtnArticulos.Location = new System.Drawing.Point(21, 37);
-            this.BtnArticulos.Name = "BtnArticulos";
-            this.BtnArticulos.Size = new System.Drawing.Size(102, 37);
-            this.BtnArticulos.TabIndex = 1;
-            this.BtnArticulos.Text = "&Articulos";
-            this.BtnArticulos.UseVisualStyleBackColor = false;
             // 
             // ToolStrip1
             // 
@@ -363,8 +347,8 @@
             this.toolStripButton1.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.toolStripButton1.Name = "toolStripButton1";
             this.toolStripButton1.Size = new System.Drawing.Size(68, 68);
-            this.toolStripButton1.Text = "Limpiar";
-            this.toolStripButton1.ToolTipText = "Eliminar";
+            this.toolStripButton1.Text = "Actualizar";
+            this.toolStripButton1.ToolTipText = "Actualizar";
             this.toolStripButton1.Click += new System.EventHandler(this.toolStripButton1_Click);
             // 
             // toolStripSeparator5
@@ -475,7 +459,6 @@
             this.panel3.PerformLayout();
             this.panelErrorCategoria.ResumeLayout(false);
             this.panelErrorCategoria.PerformLayout();
-            this.panel1.ResumeLayout(false);
             this.ToolStrip1.ResumeLayout(false);
             this.ToolStrip1.PerformLayout();
             this.ResumeLayout(false);
@@ -510,7 +493,6 @@
         private System.Windows.Forms.Panel panelErrorCategoria;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.Button BtnArticulos;
         private System.Windows.Forms.Panel panel6;
         private System.Windows.Forms.Panel panel5;
         private System.Windows.Forms.Panel panel4;

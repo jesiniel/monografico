@@ -17,6 +17,8 @@ namespace SistemaFacturacion.Formularios
         private int codigo { get; set; }
         Seccion seccion = Seccion.Instance;
         LogicaDbVentas _metodos = new LogicaDbVentas();
+        Alertas.AlertError error = new Alertas.AlertError();
+        Alertas.AlertSuccess succes = new Alertas.AlertSuccess();
         public FrmClientes()
             {
             InitializeComponent();
@@ -30,39 +32,40 @@ namespace SistemaFacturacion.Formularios
         private void ListaCliente()
             {
             var lista = _metodos.ListaClientes();
-           
-            GridViewCliente.DataSource = lista;
+
+            GridViewClientes.DataSource = lista;
             }
 
         public void BuscarCliente(string NombreCompleto, string cedula, string codigo, string telefono)
             {
             var lista = _metodos.BuscarCliente(NombreCompleto,cedula,codigo,telefono);
 
-            GridViewCliente.DataSource = lista;
+            GridViewClientes.DataSource = lista;
             }
 
         private void Salir_Click(object sender, EventArgs e)
             {
-            MenuPrincipal mp = new MenuPrincipal();
-            mp.BtnCategoria.Enabled = true;
-            mp.Show();
-            this.Close();
+            DialogResult resul = MessageBox.Show("Seguro que desea salir de este formulario?", "Mensage de Confirmacion", MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
+            if (resul == System.Windows.Forms.DialogResult.OK)
+            {
+                this.Close();
             }
+        }
 
         private void BuscarD_Click(object sender, EventArgs e)
             {
             
-            var NomC = txtSearchFullName.Text.Trim();
-            var cod = txtBuscarCodigo.Text.Trim();
-            var tel = txtTelefono.Text.Trim();
-            var ced = txtBuscarCedula.Text.Trim();
+            var NomC = txtSearchCategoria.Text.Trim();
+            var cod = txtSearchCategoria.Text.Trim();
+            var tel = txtSearchCategoria.Text.Trim();
+            var ced = txtSearchCategoria.Text.Trim();
             
             BuscarCliente(NomC,cod,tel,ced);
             }
 
         private void Aceptar_Click(object sender, EventArgs e)
             {
-            Registrar_Clientes();
+              Registrar_Clientes();
             }
 
         public void Registrar_Clientes()
@@ -70,18 +73,30 @@ namespace SistemaFacturacion.Formularios
             ClienteEntitis cliente = new ClienteEntitis();
             cliente.idcliente = this.codigo;
             cliente.apellidos = txtApellidos.Text.Trim();
-            cliente.nombre=txtNombres.Text.Trim();
-            cliente.sexo = CboSex.Text;
-            cliente.fecha_nacimiento =Convert.ToDateTime(DateNacimiento.Text);
-            cliente.tipo_documento ="Cedula";
-            cliente.num_documento = MaskCedula.Text;
-            cliente.direccion = txtDire.Text;
-            cliente.telefono = MascTel.Text;
-            cliente.email= txtemail.Text;
+            cliente.nombre=txtNom.Text.Trim();
+            cliente.sexo = cboSex.Text;
+            cliente.fecha_nacimiento =Convert.ToDateTime(dateFechaNacimiento.Text);
+            cliente.tipo_documento = cboTipoDoc.Text;
+            cliente.num_documento = txtNumDoc.Text;
+            cliente.direccion = txtDirecion.Text;
+            cliente.telefono = txtTel.Text;
+            cliente.email= txtcorreo.Text;
             cliente.UsuarioAdiciona=seccion.Usuario;
             cliente.UsuarioModifica = seccion.Usuario;
-            _metodos.Registrar_Clientes(cliente);
-            ListaCliente();
+
+           var r= _metodos.Registrar_Clientes(cliente);
+            if (r == true)
+            {
+                ClearData();
+                succes.ShowDialog();
+                ListaCliente();
+            }
+            else
+            {
+                error.ShowDialog();
+
+            }
+           
             }
 
         private void Eliminar_Click(object sender, DataGridViewCellEventArgs e)
@@ -101,17 +116,17 @@ namespace SistemaFacturacion.Formularios
 
             }
 
-        private void GridViewCliente_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        private void GridViewClientes_CellContentClick(object sender, DataGridViewCellEventArgs e)
             {
-            if (GridViewCliente.CurrentRow != null)
+            if (GridViewClientes.CurrentRow != null)
                 {
 
-               this.codigo=int.Parse(GridViewCliente.CurrentRow.Cells[0].Value.ToString());
-                txtApellidos.Text = GridViewCliente.CurrentRow.Cells[2].Value.ToString();
-                txtNombres.Text = GridViewCliente.CurrentRow.Cells[3].Value.ToString();
-                CboSex.Text = GridViewCliente.CurrentRow.Cells[4].Value.ToString();
-                MascTel.Text = GridViewCliente.CurrentRow.Cells[5].Value.ToString();
-                txtDire.Text = GridViewCliente.CurrentRow.Cells[6].Value.ToString();
+               this.codigo=int.Parse(GridViewClientes.CurrentRow.Cells[0].Value.ToString());
+                txtApellidos.Text = GridViewClientes.CurrentRow.Cells[2].Value.ToString();
+                txtNom.Text = GridViewClientes.CurrentRow.Cells[3].Value.ToString();
+                cboSex.Text = GridViewClientes.CurrentRow.Cells[4].Value.ToString();
+                txtTel.Text = GridViewClientes.CurrentRow.Cells[5].Value.ToString();
+                txtDirecion.Text = GridViewClientes.CurrentRow.Cells[6].Value.ToString();
                 }
             }
 
@@ -121,7 +136,7 @@ namespace SistemaFacturacion.Formularios
             if (MessageBox.Show("¿Realmente desea eliminar los clientes seleccionados?", "Eliminacion de cliente",
                     MessageBoxButtons.OKCancel, MessageBoxIcon.Question) == DialogResult.OK)
                 {
-                c.idcliente = int.Parse(txtcodigo.Text);
+                c.idcliente = this.codigo;
                 _metodos.Borrar_Clientes(c);
                 ListaCliente();
                 MessageBox.Show("Cliente Borrado Satifactoriamente!!!");
@@ -135,7 +150,7 @@ namespace SistemaFacturacion.Formularios
 
         private void toolStripButton1_Click(object sender, EventArgs e)
             {
-ListaCliente();
+              ListaCliente();
             }
 
         private void label14_Click(object sender, EventArgs e)
@@ -156,56 +171,63 @@ ListaCliente();
 
         private void radioButton1_CheckedChanged(object sender, EventArgs e)
             {
-            var Rnc = d.IsValidModulo11(maskedTexRnc.Text);
+            //var Rnc = d.IsValidModulo11(maskedTexRnc.Text);
            
-            maskedTexRnc.Visible = true;
-            lblced.Text = "RNC";
-            lblced.Visible = true;
-            MaskCedula.Visible = false;
+            //maskedTexRnc.Visible = true;
+            //lblced.Text = "RNC";
+            //lblced.Visible = true;
+            //MaskCedula.Visible = false;
             }
 
         private void radioButton2_CheckedChanged(object sender, EventArgs e)
             {
-            var Rnc = d.IsValidModulo10(MaskCedula.Text);
-            maskedTexRnc.Visible = false;
-            lblced.Text = "Cedula";
-            lblced.Visible = true;
-            MaskCedula.Visible = true;
+            //var Rnc = d.IsValidModulo10(MaskCedula.Text);
+            //maskedTexRnc.Visible = false;
+            //lblced.Text = "Cedula";
+            //lblced.Visible = true;
+            //MaskCedula.Visible = true;
             
             }
+
+        private void GridViewClientes_CellContentClick_1(object sender, DataGridViewCellEventArgs e)
+        {
+            if (GridViewClientes.CurrentRow != null)
+            {
+                TabEmpleado.SelectedTab = TabEmpleado.TabPages[1];
+
+
+                this.codigo = int.Parse(GridViewClientes.CurrentRow.Cells[0].Value.ToString());
+                txtNom.Text = GridViewClientes.CurrentRow.Cells[1].Value.ToString();
+                txtApellidos.Text = GridViewClientes.CurrentRow.Cells[2].Value.ToString();
+                cboSex.Text = GridViewClientes.CurrentRow.Cells[3].Value.ToString();
+                cboTipoDoc.SelectedItem = GridViewClientes.CurrentRow.Cells[5].Value.ToString();
+                txtNumDoc.Text = GridViewClientes.CurrentRow.Cells[6].Value.ToString();
+                txtDirecion.Text = GridViewClientes.CurrentRow.Cells[7].Value.ToString();
+                txtTel.Text = GridViewClientes.CurrentRow.Cells[8].Value.ToString();
+                txtcorreo.Text = GridViewClientes.CurrentRow.Cells[9].Value.ToString();
+
+
+                //blbStado.Visible = true;
+                groupBox1.Enabled = true;
+                groupBox2.Enabled = true;
+
+
+            }
+        }
+
+        private void ClearData()
+        {
+            txtNom.Text = string.Empty;
+            txtApellidos.Text = string.Empty;
+            cboSex.Text = "Seleccionar Sexo";
+            cboTipoDoc.Text= "Seleccionar Tipo Documento";
+            txtNumDoc.Text = string.Empty;
+            txtDirecion.Text = string.Empty;
+            txtTel.Text = string.Empty;
+            txtcorreo.Text = string.Empty;
+            //TabEmpleado.SelectedTab = TabEmpleado.TabPages[0];
+        }
         }
     }
-//string tipo;
-//tipo = cboTipo.Text;
-
-//            switch (tipo)
-//                {
-//                case "RNC":
-
-//                    var Rnc = d.IsValidModulo11(maskedTexRnc.Text);
-//maskedTexRnc.Visible = true;
-//                    if (Rnc == true)
-//                        {
-//                        MessageBox.Show("El RNC Es Correcta");
-//                        }
-//                    else
-//                        {
-//                        MessageBox.Show("El RNC Es InCorrecta");
-//                        }
-
-//                    break;
-
-//                case "Cedula":
-//                    MaskCedula.Visible = true;
-//                    var Cedula = d.IsValidModulo10(MaskCedula.Text);
-//                    if (Cedula == true)
-//                        {
-//                        MessageBox.Show("La Cedula Es Correcta");
-//                        }
-//                    else
-//                        {
-//                        MessageBox.Show("La Cedula Es InCorrecta");
-//                        }
-//                    break;
-
-//                }
+    
+ 

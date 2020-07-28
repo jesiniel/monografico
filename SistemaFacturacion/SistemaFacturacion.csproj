@@ -75,11 +75,10 @@
       <Private>True</Private>
     </Reference>
     <Reference Include="FlashControlV71, Version=1.0.3187.32366, Culture=neutral, PublicKeyToken=692fbea5521e1304" />
-    <Reference Include="Microsoft.ReportViewer.Common, Version=12.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91" />
-    <Reference Include="Microsoft.ReportViewer.WinForms, Version=12.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL" />
     <Reference Include="Microsoft.VisualBasic" />
     <Reference Include="System" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.configuration" />
     <Reference Include="System.Core" />
     <Reference Include="System.Web" />
     <Reference Include="System.Web.Services" />
@@ -112,23 +111,57 @@
     <Compile Include="Alertas\Alerwarning.Designer.cs">
       <DependentUpon>Alerwarning.cs</DependentUpon>
     </Compile>
+    <Compile Include="Alertas\Messeg.cs" />
     <Compile Include="ApplicationUser.cs" />
+    <Compile Include="AppTools\AppConfiguration.cs" />
     <Compile Include="AppTools\Barcode.cs" />
+    <Compile Include="AppTools\DatabaseSeeder.cs" />
     <Compile Include="AppTools\DocumentValidator.cs" />
     <Compile Include="AppTools\Encripatar.cs" />
     <Compile Include="AppTools\LogicRoll.cs" />
+    <Compile Include="AppTools\Utitilades.cs" />
     <Compile Include="AppTools\Visibilidad.cs" />
+    <Compile Include="Formularios\CancelForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\CancelForm.designer.cs">
+      <DependentUpon>CancelForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Formularios\CodigoBarraGenerador.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Formularios\CodigoBarraGenerador.Designer.cs">
       <DependentUpon>CodigoBarraGenerador.cs</DependentUpon>
     </Compile>
+    <Compile Include="Formularios\CotizacionReporte.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\CotizacionReporte.designer.cs">
+      <DependentUpon>CotizacionReporte.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios\CuadreForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\CuadreForm.designer.cs">
+      <DependentUpon>CuadreForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios\FrmAlmacenista.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\FrmAlmacenista.designer.cs">
+      <DependentUpon>FrmAlmacenista.cs</DependentUpon>
+    </Compile>
     <Compile Include="Formularios\FrmArticulos.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Formularios\FrmArticulos.Designer.cs">
       <DependentUpon>FrmArticulos.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios\FrmCaja.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\FrmCaja.designer.cs">
+      <DependentUpon>FrmCaja.cs</DependentUpon>
     </Compile>
     <Compile Include="Formularios\FrmCategoria.cs">
       <SubType>Form</SubType>
@@ -141,6 +174,12 @@
     </Compile>
     <Compile Include="Formularios\FrmClientes.Designer.cs">
       <DependentUpon>FrmClientes.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios\FrmCotizador.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\FrmCotizador.designer.cs">
+      <DependentUpon>FrmCotizador.cs</DependentUpon>
     </Compile>
     <Compile Include="Formularios\FrmCuentasPorCobrarl.cs">
       <SubType>Form</SubType>
@@ -178,6 +217,12 @@
     <Compile Include="Formularios\FrmPrueba.Designer.cs">
       <DependentUpon>FrmPrueba.cs</DependentUpon>
     </Compile>
+    <Compile Include="Formularios\FrmRhh.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\FrmRhh.designer.cs">
+      <DependentUpon>FrmRhh.cs</DependentUpon>
+    </Compile>
     <Compile Include="Formularios\FrmTrabajador.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -202,12 +247,24 @@
     <Compile Include="Formularios\MenuPrincipal.Designer.cs">
       <DependentUpon>MenuPrincipal.cs</DependentUpon>
     </Compile>
+    <Compile Include="Formularios\VisualFactura.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\VisualFactura.designer.cs">
+      <DependentUpon>VisualFactura.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Reports\BarcodeReport.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>BarcodeReport.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reports\CotizacionReport.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reports\FacturaReport.cs">
       <SubType>Component</SubType>
     </Compile>
     <Compile Include="Seccion.cs" />
@@ -220,11 +277,26 @@
     <EmbeddedResource Include="Alertas\Alerwarning.resx">
       <DependentUpon>Alerwarning.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\CancelForm.resx">
+      <DependentUpon>CancelForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Formularios\CodigoBarraGenerador.resx">
       <DependentUpon>CodigoBarraGenerador.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\CotizacionReporte.resx">
+      <DependentUpon>CotizacionReporte.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\CuadreForm.resx">
+      <DependentUpon>CuadreForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\FrmAlmacenista.resx">
+      <DependentUpon>FrmAlmacenista.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Formularios\FrmArticulos.resx">
       <DependentUpon>FrmArticulos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\FrmCaja.resx">
+      <DependentUpon>FrmCaja.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Formularios\FrmCategoria.resx">
       <DependentUpon>FrmCategoria.cs</DependentUpon>
@@ -232,6 +304,9 @@
     <EmbeddedResource Include="Formularios\FrmClientes.resx">
       <DependentUpon>FrmClientes.cs</DependentUpon>
       <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\FrmCotizador.resx">
+      <DependentUpon>FrmCotizador.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Formularios\FrmCuentasPorCobrarl.resx">
       <DependentUpon>FrmCuentasPorCobrarl.cs</DependentUpon>
@@ -248,6 +323,9 @@
     <EmbeddedResource Include="Formularios\FrmPrueba.resx">
       <DependentUpon>FrmPrueba.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\FrmRhh.resx">
+      <DependentUpon>FrmRhh.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Formularios\FrmTrabajador.resx">
       <DependentUpon>FrmTrabajador.cs</DependentUpon>
     </EmbeddedResource>
@@ -260,6 +338,9 @@
     <EmbeddedResource Include="Formularios\MenuPrincipal.resx">
       <DependentUpon>MenuPrincipal.cs</DependentUpon>
       <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\VisualFactura.resx">
+      <DependentUpon>VisualFactura.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -292,7 +373,6 @@
     <None Include="Recursos\Manual Programación Lógica.pdf" />
     <None Include="Recursos\SistemaFacturacion.application" />
     <None Include="Recursos\Thumbs.db" />
-    <None Include="Reports\BarcodeArticulo.rpt" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\CapaEntidad\CapaEntidad.csproj">
@@ -413,6 +493,28 @@
     <Content Include="Recursos\stats.png" />
     <Content Include="Recursos\whatsapp.png" />
     <Content Include="Recursos\youtube.png" />
+    <Content Include="Resources\buscador.png" />
+    <Content Include="Resources\icon minimizar.png" />
+    <None Include="Reports\CotizacionReport.rpt" />
+    <None Include="Reports\FacturaReport.rpt" />
+    <None Include="Resources\doble carne1.jpg" />
+    <None Include="Resources\descarga %281%29.jpg" />
+    <None Include="Resources\doble carne.jpg" />
+    <None Include="Resources\descarga.jpg" />
+    <None Include="Resources\club hause.jpg" />
+    <None Include="Resources\suprime.jpg" />
+    <None Include="Resources\papas medianas.jpg" />
+    <None Include="Resources\papa grandes.jpg" />
+    <None Include="Resources\nugguets.jpg" />
+    <None Include="Resources\mctostada.jpg" />
+    <None Include="Resources\mcdonalds.png" />
+    <None Include="Resources\filete de pezcado.jpg" />
+    <None Include="Resources\ensalada.jpg" />
+    <None Include="Resources\Cuarto de libra.jpg" />
+    <None Include="Resources\cajita feliz.jpg" />
+    <None Include="Resources\Burritos.jpg" />
+    <None Include="Resources\Big mac.jpg" />
+    <None Include="Resources\Postres.jpg" />
     <None Include="Resources\macdonald.jpg" />
     <None Include="Resources\Logo menu principal.jpg" />
   </ItemGroup>
